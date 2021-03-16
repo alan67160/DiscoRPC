@@ -1,0 +1,25 @@
+﻿{
+  "langcode": "en_us",
+
+  "cfg.clientid.label": "Client ID:",
+
+  "cfg.details.label": "Details:",
+  "cfg.state.label": "State:",
+
+  "cfg.largeimagekey.label": "Large Image Key:",
+  "cfg.largeimagetext.label": "Large Image Text:",
+
+  "cfg.smallimagekey.label": "Small Image Key:",
+  "cfg.smallimagetext.label": "Small Image Text:",
+
+  "cfg.buttonatext.label": "Button A Label:",
+  "cfg.buttonaurl.label": "Button A URL:",
+
+  "cfg.buttonbtext.label": "Button B Label:",
+  "cfg.buttonburl.label": "Button B URL:",
+
+  "cfg.savebutton.label": "Save",
+  "cfg.refreshbutton.label": "Refresh",
+
+  "error.clientid": "The Client ID «{{0}}» is not a valid client ID."
+}
