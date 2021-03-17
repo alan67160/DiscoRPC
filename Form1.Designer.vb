@@ -22,6 +22,7 @@ Partial Class Form1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.CFG_ClientID_Label = New System.Windows.Forms.Label()
         Me.CFG_ClientID_TextBox = New System.Windows.Forms.TextBox()
         Me.CFG_Details_Label = New System.Windows.Forms.Label()
@@ -283,12 +284,12 @@ Partial Class Form1
         Me.Controls.Add(Me.CFG_ClientID_TextBox)
         Me.Controls.Add(Me.CFG_ClientID_Label)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(816, 398)
         Me.MinimumSize = New System.Drawing.Size(816, 398)
         Me.Name = "Form1"
-        Me.ShowIcon = False
-        Me.Text = "DiscoRPC"
+        Me.Text = "DiscoRPC 0.1.2"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
