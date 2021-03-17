@@ -14,11 +14,11 @@
   "cfg.smallimagekey.label": "Clée de la petite image:",
   "cfg.smallimagetext.label": "Texte de la petite image:",
 
-  "cfg.buttonatext.label": "Texte du Bouton A:",
-  "cfg.buttonaurl.label": "URL du Bouton A:",
+  "cfg.buttonatext.label": "Texte du bouton A:",
+  "cfg.buttonaurl.label": "URL du bouton A:",
 
-  "cfg.buttonbtext.label": "Texte du Bouton B:",
-  "cfg.buttonburl.label": "URL du Bouton B:",
+  "cfg.buttonbtext.label": "Texte du bouton B:",
+  "cfg.buttonburl.label": "URL du bouton B:",
 
   "cfg.savebutton.label": "Sauvegarder",
   "cfg.refreshbutton.label": "Rafraichir",
