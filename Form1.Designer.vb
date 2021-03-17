@@ -179,7 +179,7 @@ Partial Class Form1
         'CFG_ButtonBText_TextBox
         '
         Me.CFG_ButtonBText_TextBox.Location = New System.Drawing.Point(15, 285)
-        Me.CFG_ButtonBText_TextBox.MaxLength = 128
+        Me.CFG_ButtonBText_TextBox.MaxLength = 32
         Me.CFG_ButtonBText_TextBox.Name = "CFG_ButtonBText_TextBox"
         Me.CFG_ButtonBText_TextBox.Size = New System.Drawing.Size(129, 20)
         Me.CFG_ButtonBText_TextBox.TabIndex = 20
@@ -204,7 +204,7 @@ Partial Class Form1
         'CFG_ButtonAText_TextBox
         '
         Me.CFG_ButtonAText_TextBox.Location = New System.Drawing.Point(15, 233)
-        Me.CFG_ButtonAText_TextBox.MaxLength = 128
+        Me.CFG_ButtonAText_TextBox.MaxLength = 32
         Me.CFG_ButtonAText_TextBox.Name = "CFG_ButtonAText_TextBox"
         Me.CFG_ButtonAText_TextBox.Size = New System.Drawing.Size(129, 20)
         Me.CFG_ButtonAText_TextBox.TabIndex = 16
