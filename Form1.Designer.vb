@@ -22,6 +22,7 @@ Partial Class Form1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.CFG_ClientID_Label = New System.Windows.Forms.Label()
         Me.CFG_ClientID_TextBox = New System.Windows.Forms.TextBox()
@@ -47,6 +48,7 @@ Partial Class Form1
         Me.CFG_ButtonBText_Label = New System.Windows.Forms.Label()
         Me.CFG_Refresh_Button = New System.Windows.Forms.Button()
         Me.CFG_Save_Button = New System.Windows.Forms.Button()
+        Me.UpdateTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'CFG_ClientID_Label
@@ -254,6 +256,11 @@ Partial Class Form1
         Me.CFG_Save_Button.Text = "Save"
         Me.CFG_Save_Button.UseVisualStyleBackColor = True
         '
+        'UpdateTimer
+        '
+        Me.UpdateTimer.Enabled = True
+        Me.UpdateTimer.Interval = 10000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -289,7 +296,7 @@ Partial Class Form1
         Me.MaximumSize = New System.Drawing.Size(816, 398)
         Me.MinimumSize = New System.Drawing.Size(816, 398)
         Me.Name = "Form1"
-        Me.Text = "DiscoRPC 0.1.2"
+        Me.Text = "DiscoRPC X.X.X"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -319,4 +326,5 @@ Partial Class Form1
     Friend WithEvents CFG_ButtonBText_Label As Label
     Friend WithEvents CFG_Refresh_Button As Button
     Friend WithEvents CFG_Save_Button As Button
+    Friend WithEvents UpdateTimer As Timer
 End Class

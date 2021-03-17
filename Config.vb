@@ -4,6 +4,8 @@ Public Class Config
     Public hide_on_startup As Boolean = False
     Public start_with_windows As Boolean = False
     Public lang As String = "en_us"
+    Public use_beta As Boolean = True
+    Public use_alpha As Boolean = False
     Public rpc As New RPC_Config
 End Class
 

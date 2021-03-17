@@ -21,5 +21,12 @@
   "cfg.savebutton.label": "Save",
   "cfg.refreshbutton.label": "Refresh",
 
-  "error.clientid": "The Client ID «{{0}}» is not a valid client ID."
+  "error.clientid": "The Client ID «{{0}}» is not a valid client ID.",
+
+  "update.title": "A new update is available!",
+  "update.newversionavailable": "The version {{0}}.{{1}}.{{2}} is now available.",
+  "update.newversionavailable.none": "A new version is now available.",
+  "update.details.none":"Nothing said about this update...",
+  "update.download": "Download",
+  "update.ignoreuntilrestart":  "Ignore until restart"
 }

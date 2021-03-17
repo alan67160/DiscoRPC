@@ -2,11 +2,18 @@
 Imports DiscordRPC
 Imports DiscordRPC.Message
 Imports Newtonsoft.Json
-
+Imports Flurl
+Imports Flurl.Http
 Public Class Form1
     Dim WithEvents client As DiscordRpcClient = Nothing
 
-    Dim config As New Config
+    Public config As New Config
+
+    Public CurrentVer As VerConfig = New VerConfig(0, 2, 0)
+
+    Public UpdateVer As VerConfig = Nothing
+
+    Public ignore_ver As Boolean = False
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Lang.Load()
@@ -40,9 +47,11 @@ Public Class Form1
                 CFG_ButtonBURL_TextBox.Text = config.rpc.Button_B.Url
             End If
         End If
+
+        Me.Text = $"DiscoRPC {CurrentVer.ver_}.{CurrentVer.beta_}.{CurrentVer.alpha_}"
     End Sub
 
-    Sub LoadLang(Optional lang_ As String = "en_us")
+    Public Sub LoadLang(Optional lang_ As String = "en_us")
 
         CFG_ClientID_Label.Text = Lang.Translate(lang_, "cfg.clientid.label")
 
@@ -119,5 +128,50 @@ Public Class Form1
             config.rpc.Button_B = New RPC_Config_Button(CFG_ButtonBText_TextBox.Text, CFG_ButtonBURL_TextBox.Text)
         End If
         File.WriteAllText("config.json", JsonConvert.SerializeObject(config, Formatting.Indented))
+    End Sub
+
+    Async Function GetUpdateFileAsync() As Task(Of VerConfig)
+        Try
+            Dim r = Await "https://github.com/ZaptoInc/DiscoRPC/blob/main/about.json".GetJsonAsync(Of VerConfig)
+            Return r
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Private Async Sub Timer1_Tick(sender As Object, e As EventArgs) Handles UpdateTimer.Tick
+        UpdateTimer.Stop()
+        UpdateTimer.Interval = 12 * 60 * 60 * 1000
+        Try
+            If ignore_ver = False Then
+                UpdateVer = Await GetUpdateFileAsync()
+                If UpdateVer IsNot Nothing Then
+                    If UpdateVer.ver_ > CurrentVer.ver_ Then
+                        UpdateForm.Hide()
+                        UpdateForm.Show()
+                        UpdateForm.LoadLang(config.lang)
+                    Else
+                        If config.use_beta Then
+                            If UpdateVer.beta_ > CurrentVer.beta_ Then
+                                UpdateForm.Hide()
+                                UpdateForm.Show()
+                                UpdateForm.LoadLang(config.lang)
+                            Else
+                                If config.use_alpha Then
+                                    If UpdateVer.alpha_ > CurrentVer.alpha_ Then
+                                        UpdateForm.Hide()
+                                        UpdateForm.Show()
+                                        UpdateForm.LoadLang(config.lang)
+                                    End If
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+        UpdateTimer.Start()
     End Sub
 End Class
