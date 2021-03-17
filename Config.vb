@@ -10,14 +10,15 @@ Public Class Config
 End Class
 
 Public Class RPC_Config
-    Public ClientID As ULong?
-    Public Details As String
+    Public ClientID As ULong? = 821442553265782844
+    Public Details As String = "Fully Customizable"
     Public State As String
+    Public LargeImageKey As String = "discorpc"
+    Public LargeImageText As String = $"DiscoRPC"
     Public SmallImageKey As String
     Public SmallImageText As String
-    Public LargeImageKey As String
-    Public LargeImageText As String
-    Public Button_A As RPC_Config_Button = Nothing
+
+    Public Button_A As RPC_Config_Button = New RPC_Config_Button("Download", "https://github.com/ZaptoInc/DiscoRPC/releases")
     Public Button_B As RPC_Config_Button = Nothing
 
     Function CreateRichClient() As DiscordRpcClient

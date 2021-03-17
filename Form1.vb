@@ -7,9 +7,9 @@ Imports Flurl.Http
 Public Class Form1
     Dim WithEvents client As DiscordRpcClient = Nothing
 
-    Public config As New Config
+    Public CurrentVer As VerConfig = New VerConfig(0, 2, 1)
 
-    Public CurrentVer As VerConfig = New VerConfig(0, 2, 0)
+    Public config As New Config
 
     Public UpdateVer As VerConfig = Nothing
 
@@ -49,6 +49,19 @@ Public Class Form1
         End If
 
         Me.Text = $"DiscoRPC {CurrentVer.ver_}.{CurrentVer.beta_}.{CurrentVer.alpha_}"
+
+        LangComboBox.Items.Clear()
+
+        For Each i In Lang.CurrentLang
+            LangComboBox.Items.Add(Lang.Translate(i.Key, "lang.name"))
+        Next
+
+        LangComboBox.Text = Lang.Translate(config.lang, "lang.name")
+
+        Try
+            ApplyRPCClient()
+        Catch
+        End Try
     End Sub
 
     Public Sub LoadLang(Optional lang_ As String = "en_us")
@@ -72,6 +85,8 @@ Public Class Form1
 
         CFG_Refresh_Button.Text = Lang.Translate(lang_, "cfg.refreshbutton.label")
         CFG_Save_Button.Text = Lang.Translate(lang_, "cfg.savebutton.label")
+
+        LangLabel.Text = Lang.Translate(lang_, "lang.label")
     End Sub
 
     Private Sub CFG_Refresh_Button_Click(sender As Object, e As EventArgs) Handles CFG_Refresh_Button.Click
@@ -141,7 +156,7 @@ Public Class Form1
 
     Private Async Sub Timer1_Tick(sender As Object, e As EventArgs) Handles UpdateTimer.Tick
         UpdateTimer.Stop()
-        UpdateTimer.Interval = 12 * 60 * 60 * 1000
+        UpdateTimer.Interval = 1 * 60 * 60 * 1000
         Try
             If ignore_ver = False Then
                 UpdateVer = Await GetUpdateFileAsync()
@@ -173,5 +188,15 @@ Public Class Form1
 
         End Try
         UpdateTimer.Start()
+    End Sub
+
+    Private Sub LangComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LangComboBox.SelectedIndexChanged
+        For Each i In Lang.CurrentLang
+            If LangComboBox.SelectedItem.ToString = Lang.Translate(i.Key, "lang.name") Then
+                config.lang = i.Key
+                Exit For
+            End If
+        Next
+        LoadLang(config.lang)
     End Sub
 End Class

@@ -148,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="about.json" />
+    <None Include="langs\fr.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="langs\en_us.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

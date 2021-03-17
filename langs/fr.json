@@ -1,0 +1,34 @@
+﻿{
+  "langcode": "fr",
+  "lang.label": "Langue:",
+  "lang.name": "Français",
+
+  "cfg.clientid.label": "ID du client:",
+
+  "cfg.details.label": "Détails:",
+  "cfg.state.label": "État:",
+
+  "cfg.largeimagekey.label": "Clée de la grande image:",
+  "cfg.largeimagetext.label": "Texte de la grande image:",
+
+  "cfg.smallimagekey.label": "Clée de la petite image:",
+  "cfg.smallimagetext.label": "Texte de la petite image:",
+
+  "cfg.buttonatext.label": "Texte du Bouton A:",
+  "cfg.buttonaurl.label": "URL du Bouton A:",
+
+  "cfg.buttonbtext.label": "Texte du Bouton B:",
+  "cfg.buttonburl.label": "URL du Bouton B:",
+
+  "cfg.savebutton.label": "Sauvegarder",
+  "cfg.refreshbutton.label": "Rafraichir",
+
+  "error.clientid": "L'ID de client «{{0}}» n'est pas un ID client valide.",
+
+  "update.title": "Une nouvelle mise à jour est disponible!",
+  "update.newversionavailable": "La version {{0}}.{{1}}.{{2}} est maintenant disponible.",
+  "update.newversionavailable.none": "Une nouvelle version est maintenant disponible.",
+  "update.details.none": "Rien de dit sur cette mise à jour...",
+  "update.download": "Télécharger",
+  "update.ignoreuntilrestart": "Ignorer jusqu'au redémarrage"
+}

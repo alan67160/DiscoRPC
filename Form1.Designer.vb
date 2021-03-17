@@ -49,6 +49,8 @@ Partial Class Form1
         Me.CFG_Refresh_Button = New System.Windows.Forms.Button()
         Me.CFG_Save_Button = New System.Windows.Forms.Button()
         Me.UpdateTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.LangComboBox = New System.Windows.Forms.ComboBox()
+        Me.LangLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'CFG_ClientID_Label
@@ -261,11 +263,32 @@ Partial Class Form1
         Me.UpdateTimer.Enabled = True
         Me.UpdateTimer.Interval = 10000
         '
+        'LangComboBox
+        '
+        Me.LangComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.LangComboBox.FormattingEnabled = True
+        Me.LangComboBox.Location = New System.Drawing.Point(15, 324)
+        Me.LangComboBox.Name = "LangComboBox"
+        Me.LangComboBox.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.LangComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.LangComboBox.TabIndex = 26
+        '
+        'LangLabel
+        '
+        Me.LangLabel.AutoSize = True
+        Me.LangLabel.Location = New System.Drawing.Point(12, 308)
+        Me.LangLabel.Name = "LangLabel"
+        Me.LangLabel.Size = New System.Drawing.Size(34, 13)
+        Me.LangLabel.TabIndex = 27
+        Me.LangLabel.Text = "Lang:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 359)
+        Me.Controls.Add(Me.LangLabel)
+        Me.Controls.Add(Me.LangComboBox)
         Me.Controls.Add(Me.CFG_Save_Button)
         Me.Controls.Add(Me.CFG_Refresh_Button)
         Me.Controls.Add(Me.CFG_ButtonBURL_Label)
@@ -327,4 +350,6 @@ Partial Class Form1
     Friend WithEvents CFG_Refresh_Button As Button
     Friend WithEvents CFG_Save_Button As Button
     Friend WithEvents UpdateTimer As Timer
+    Friend WithEvents LangComboBox As ComboBox
+    Friend WithEvents LangLabel As Label
 End Class

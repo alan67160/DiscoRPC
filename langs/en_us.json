@@ -1,5 +1,7 @@
 ﻿{
   "langcode": "en_us",
+  "lang.label": "Lang:",
+  "lang.name": "English",
 
   "cfg.clientid.label": "Client ID:",
 
