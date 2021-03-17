@@ -11,3 +11,8 @@ Example of how it looks:
 
 ![](https://github.com/ZaptoInc/DiscoRPC/blob/main/demo/example_GUI.png "How the GUI looks")
 
+## Available langs:
+
+* English
+
+* Français
